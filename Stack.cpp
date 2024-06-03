@@ -33,6 +33,16 @@ bool isgl(char a) {
 	string str("aeiouy");
 	return str.find(a) != string::npos;
 }
+int last(stack*& h) {
+	stack* mig = NULL;
+	char max = pop(h);
+	char x = max;
+	int ix = 0;
+	push(mig, max);
+	int i = 0;
+	
+}
+
 stack* result(stack*& h) {
 	int max = fmax(h);//ищем максимальный элемент
 	int min = fmin(h);//ищем минимальный элемент
