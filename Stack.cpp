@@ -29,39 +29,6 @@ void reverse(stack*& h) {//переворачиваем стек
 	h = obr;
 }
 
-int fmax(stack*& h) {//поиск максимального элемента
-	stack* mig = NULL;
-	int max = pop(h);
-	int x = max;
-	push(mig, max);
-	while (h) {//пока h не пуст
-		x = pop(h);
-		if (x > max) {
-			max = x;
-		}
-		push(mig, x);
-	}
-	reverse(mig);
-	h = mig;
-	return max;
-}
-int fmin(stack*& h) {//поиск минимального элемента
-	stack* mig = NULL;
-	int min = pop(h);
-	int x = min;
-	push(mig, min);
-	while (h) {//пока h не пуст
-		x = pop(h);
-		if (x < min) {
-			min = x;
-		}
-		push(mig, x);
-	}
-	reverse(mig);
-	h = mig;
-	return min;
-}
-
 stack* result(stack*& h) {
 	int max = fmax(h);//ищем максимальный элемент
 	int min = fmin(h);//ищем минимальный элемент
