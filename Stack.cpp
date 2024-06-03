@@ -29,6 +29,10 @@ void reverse(stack*& h) {//переворачиваем стек
 	h = obr;
 }
 
+bool isgl(char a) {
+	string str("aeiouy");
+	return str.find(a) != string::npos;
+}
 stack* result(stack*& h) {
 	int max = fmax(h);//ищем максимальный элемент
 	int min = fmin(h);//ищем минимальный элемент
