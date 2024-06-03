@@ -21,44 +21,48 @@ int pop(stack*& h) {//удаление элемента из стекa
 	return i;
 }
 
-void reverse(stack* h) {//переворачиваем стек
+void reverse(stack*& h) {//переворачиваем стек
 	stack* obr = NULL;
-	while (h)
+	while (h) {
 		push(obr, pop(h));
+	}
 	h = obr;
 }
 
-int fmax(stack* h) {//поиск максимального элемента
+int fmax(stack*& h) {//поиск максимального элемента
 	stack* mig = NULL;
-	int max = pop(h), x;
+	int max = pop(h);
+	int x = max;
 	push(mig, max);
 	while (h) {//пока h не пуст
 		x = pop(h);
-		if (x > max)
+		if (x > max) {
 			max = x;
-		push(mig, x);//кладем извлеченный элемент в temp
+		}
+		push(mig, x);
 	}
-	reverse(mig);//меняем порядок элементов в стеке temp
-	h = mig;//h будет указывать на temp
+	reverse(mig);
+	h = mig;
 	return max;
 }
-int fmin(stack* h) {//поиск максимального элемента
+int fmin(stack*& h) {//поиск минимального элемента
 	stack* mig = NULL;
-	int min = pop(h), x;
+	int min = pop(h);
+	int x = min;
 	push(mig, min);
 	while (h) {//пока h не пуст
 		x = pop(h);
-		if (x < min)
+		if (x < min) {
 			min = x;
-		push(mig, x);//кладем извлеченный элемент в temp
+		}
+		push(mig, x);
 	}
-	reverse(mig);//меняем порядок элементов в стеке temp
-	h = mig;//h будет указывать на temp
+	reverse(mig);
+	h = mig;
 	return min;
 }
 
-stack* result(stack* h) {// после максимального вставляет новый элемент
-
+stack* result(stack*& h) {
 	int max = fmax(h);//ищем максимальный элемент
 	int min = fmin(h);//ищем минимальный элемент
 	stack* mig = NULL;
