@@ -40,7 +40,11 @@ int last(stack*& h) {
 	int ix = 0;
 	push(mig, max);
 	int i = 0;
-	
+
+	if (isgl(x)) {
+		push(h, x);
+		return 0;
+	}	
 }
 
 stack* result(stack*& h) {
