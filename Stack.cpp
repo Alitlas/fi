@@ -40,6 +40,7 @@ int last(stack*& h) {
 	int ix = 0;
 	push(mig, max);
 	int i = 0;
+	bool flag = true;
 
 	if (isgl(x)) {
 		push(h, x);
@@ -50,6 +51,7 @@ int last(stack*& h) {
 		if (isgl(x) && flag) {
 			max = x;
 			ix = i;
+			flag = false;
 		}
 		push(mig, x);
 		i++;
