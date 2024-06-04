@@ -79,7 +79,8 @@ stack* result(stack*& h) {
 
 int main() {
 	stack* h = NULL;
-	int n, x;
+	int n;
+	char x;
 
 	cout << "Size = ";
 	cin >> n;
