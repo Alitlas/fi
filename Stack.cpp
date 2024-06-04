@@ -62,10 +62,10 @@ int last(stack*& h) {
 }
 
 stack* result(stack*& h) {
-	int max = fmax(h);//ищем максимальный элемент
-	int min = fmin(h);//ищем минимальный элемент
+	int max = last(h);//ищем позицию последней гласной
 	stack* mig = NULL;
-	int x;
+	char x;
+	int i = 0;
 
 	while (h) {
 		x = pop(h);
