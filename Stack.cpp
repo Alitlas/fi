@@ -69,10 +69,11 @@ stack* result(stack*& h) {
 
 	while (h) {
 		x = pop(h);
-		if (x == max) {
-			push(mig, min);
+		if (i == max) {
+			push(mig, '!');
 		}
 		push(mig, x);
+		i++;
 	}
 	return (mig); //возвращаем temp как результат функции
 }
