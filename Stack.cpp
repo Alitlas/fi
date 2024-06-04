@@ -44,7 +44,16 @@ int last(stack*& h) {
 	if (isgl(x)) {
 		push(h, x);
 		return 0;
-	}	
+	}
+	while (h) {//пока h не пуст
+		x = pop(h);
+		if (isgl(x) && flag) {
+			max = x;
+			ix = i;
+		}
+		push(mig, x);
+		i++;
+	}
 }
 
 stack* result(stack*& h) {
