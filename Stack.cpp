@@ -56,6 +56,9 @@ int last(stack*& h) {
 		push(mig, x);
 		i++;
 	}
+	reverse(mig);
+	h = mig;
+	return ix;
 }
 
 stack* result(stack*& h) {
